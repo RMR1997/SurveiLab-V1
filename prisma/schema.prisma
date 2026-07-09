@@ -1,0 +1,137 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["driverAdapters"]
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+  // Turso: url = env("TURSO_DATABASE_URL") -- handled via adapter in prisma.ts
+}
+
+// ─────────────────────────────────────────────────────────────
+// CORE ENTITIES
+// ─────────────────────────────────────────────────────────────
+
+model SurveySession {
+  id            String    @id @default(cuid())
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  completedAt   DateTime?
+  
+  // Session metadata
+  ipAddress     String?
+  userAgent     String?
+  referrer      String?
+  
+  // Progress tracking
+  currentStep   Int       @default(0)
+  isCompleted   Boolean   @default(false)
+  
+  // Relations
+  profile       RespondentProfile?
+  responses     IdeaResponse[]
+  finalChoice   FinalChoice?
+  feedback      Feedback?
+  
+  @@index([isCompleted])
+  @@index([createdAt])
+}
+
+model RespondentProfile {
+  id              String   @id @default(cuid())
+  sessionId       String   @unique
+  session         SurveySession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  
+  // Demographics (String instead of enum for SQLite)
+  ageRange        String
+  occupation      String
+  location        String
+  techSavviness   Int
+  
+  createdAt       DateTime @default(now())
+}
+
+model IdeaResponse {
+  id              String   @id @default(cuid())
+  sessionId       String
+  session         SurveySession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  
+  // Which idea
+  ideaId          String
+  
+  // Core metrics (1-5 scale)
+  problemSeverity Int
+  usefulness      Int
+  urgency         Int
+  
+  // Experience proximity (Q2)
+  experienceType  String
+  
+  // Intent (Q4)
+  usageIntent     String
+  
+  // NPS (Q6)
+  npsScore        Int
+  
+  // Clarity (Q7)
+  conceptClarity  String
+  
+  // Timestamps
+  answeredAt      DateTime @default(now())
+  
+  @@unique([sessionId, ideaId])
+  @@index([ideaId])
+}
+
+model FinalChoice {
+  id              String   @id @default(cuid())
+  sessionId       String   @unique
+  session         SurveySession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  
+  firstChoiceId   String
+  secondChoiceId  String?
+  reason          String
+  
+  createdAt       DateTime @default(now())
+}
+
+model Feedback {
+  id                    String   @id @default(cuid())
+  sessionId             String   @unique
+  session               SurveySession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  
+  mostImportantFeature  String
+  biggestConcern        String
+  otherIdeas            String?
+  
+  createdAt             DateTime @default(now())
+}
+
+// ─────────────────────────────────────────────────────────────
+// CONFIGURATION
+// ─────────────────────────────────────────────────────────────
+
+model StartupIdea {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  name        String
+  tagline     String
+  description String
+  
+  // Assets
+  iconUrl     String?
+  mockupUrl   String?
+  colorPrimary String  @default("#3B82F6")
+  
+  // Display order
+  sortOrder   Int      @default(0)
+  
+  // Active status
+  isActive    Boolean  @default(true)
+  
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  @@index([isActive, sortOrder])
+}
