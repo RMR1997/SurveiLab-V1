@@ -149,7 +149,7 @@ export default function AdminDashboard() {
               <BarChart3 className="w-6 h-6 text-primary" />
               Admin Dashboard
             </h1>
-            <p className="text-sm text-muted-foreground">Data hasil survey idea validation</p>
+            <p className="text-sm text-muted-foreground">Data hasil survey SurveiLab</p>
           </div>
           <Button variant="outline" size="sm" onClick={fetchAll} className="gap-2">
             <RefreshCw className="w-4 h-4" />

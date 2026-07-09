@@ -2,9 +2,9 @@ import { MetadataRoute } from 'next'
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'Idea Validation Platform',
-    short_name: 'IVP',
-    description: 'Platform validasi ide startup untuk Indonesia',
+    name: 'SurveiLab',
+    short_name: 'SurveiLab',
+    description: 'Platform survey untuk validasi ide startup Indonesia',
     start_url: '/',
     display: 'standalone',
     background_color: '#ffffff',

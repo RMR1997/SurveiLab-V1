@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Admin Dashboard - Idea Validation Platform',
+  title: 'Admin Dashboard - SurveiLab',
   description: 'Dashboard admin untuk melihat hasil survey',
 }
 

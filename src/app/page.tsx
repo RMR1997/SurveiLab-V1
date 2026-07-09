@@ -244,7 +244,7 @@ export default function LandingPage() {
       {/* Footer */}
       <footer className="py-8 border-t border-border/50">
                 <Container className="text-center text-sm text-muted-foreground">
-          <p>© 2024 Idea Validation Platform. Built with care for Indonesia.</p>
+          <p>© 2024 SurveiLab. Built with care for Indonesia.</p>
           <nav className="mt-2 flex justify-center space-x-4">
             <a href="/privacy" className="hover:underline">Privacy Policy</a>
             <a href="/terms" className="hover:underline">Terms of Service</a>

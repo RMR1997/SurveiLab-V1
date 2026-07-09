@@ -25,7 +25,7 @@ export default function ThankYouPage() {
     if (navigator.share) {
       try {
         await navigator.share({
-          title: 'Idea Validation Platform',
+          title: 'SurveiLab',
           text: 'Saya baru saja membantu menentukan startup terbaik untuk Indonesia. Ikut berpendapat yuk!',
           url: window.location.origin,
         })
@@ -110,7 +110,7 @@ export default function ThankYouPage() {
             transition={{ delay: 0.8 }}
             className="text-xs text-muted-foreground mt-8"
           >
-            Idea Validation Platform © 2024
+            SurveiLab © 2024
           </motion.p>
         </CardContent>
       </Card>

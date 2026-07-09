@@ -10,8 +10,8 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Idea Validation Platform - Validasi Ide Startup Anda',
-  description: 'Platform untuk melakukan concept testing terhadap ide bisnis digital. Dapatkan insight dari calon pengguna untuk keputusan yang lebih baik.',
+  title: 'SurveiLab - Validasi Ide Startup Anda',
+  description: 'Platform survey untuk melakukan concept testing terhadap ide bisnis digital. Dapatkan insight dari calon pengguna untuk keputusan yang lebih baik.',
 }
 
 export default function RootLayout({

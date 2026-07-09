@@ -27,8 +27,8 @@ export function Navbar({ progress = 0, showProgress = false, className }: Navbar
             <ClipboardList className="w-5 h-5 text-white" />
           </div>
           <div className="hidden sm:block">
-            <h1 className="font-bold text-lg leading-tight">Idea Validation</h1>
-            <p className="text-xs text-muted-foreground">Platform</p>
+            <h1 className="font-bold text-lg leading-tight">SurveiLab</h1>
+            <p className="text-xs text-muted-foreground">Idea Validation</p>
           </div>
         </div>
 
