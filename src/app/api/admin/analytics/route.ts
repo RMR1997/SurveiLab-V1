@@ -3,6 +3,8 @@ import { prisma } from '@/lib/prisma'
 import { calculateIdeaScore } from '@/lib/utils'
 import { getAllIdeas } from '@/data/ideas'
 
+export const dynamic = 'force-dynamic'
+
 export async function GET(request: Request) {
   try {
     // Get all data

@@ -3,6 +3,8 @@ import { prisma } from '@/lib/prisma'
 import { ageRangeLabels, occupationLabels, experienceLabels, usageIntentLabels, clarityLabels } from '@/lib/utils'
 import { getAllIdeas } from '@/data/ideas'
 
+export const dynamic = 'force-dynamic'
+
 export async function GET() {
   try {
     const sessions = await prisma.surveySession.findMany({
