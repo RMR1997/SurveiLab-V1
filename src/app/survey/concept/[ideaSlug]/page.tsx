@@ -164,7 +164,7 @@ export default function ConceptPage() {
           {/* Q1: Problem Severity */}
           <LikertQuestion
             id="problemSeverity"
-            question="Menurut Anda, seberapa besar masalah yang ingin diselesaikan platform ini?"
+            question={idea.q1ProblemText || "Menurut Anda, seberapa besar masalah yang ingin diselesaikan platform ini?"}
             value={formData.problemSeverity || 3}
             onChange={(value) => setFormData({ ...formData, problemSeverity: value })}
             labels={likertLabels.problemSeverity}
@@ -173,7 +173,7 @@ export default function ConceptPage() {
           {/* Q2: Experience Type */}
           <RadioQuestion
             id="experienceType"
-            question="Apakah Anda atau orang di sekitar Anda pernah mengalami masalah tersebut?"
+            question={idea.q2ExperienceText || "Apakah Anda atau orang di sekitar Anda pernah mengalami masalah tersebut?"}
             options={experienceTypeOptions}
             value={formData.experienceType || ''}
             onChange={(value) => setFormData({ ...formData, experienceType: value as any })}
@@ -182,7 +182,7 @@ export default function ConceptPage() {
           {/* Q3: Usefulness */}
           <LikertQuestion
             id="usefulness"
-            question="Seberapa bermanfaat platform ini?"
+            question={idea.q3UsefulnessText || "Seberapa bermanfaat platform ini?"}
             value={formData.usefulness || 3}
             onChange={(value) => setFormData({ ...formData, usefulness: value })}
             labels={likertLabels.usefulness}
@@ -200,7 +200,7 @@ export default function ConceptPage() {
           {/* Q5: Urgency */}
           <LikertQuestion
             id="urgency"
-            question="Seberapa mendesak platform ini?"
+            question={idea.q5UrgencyText || "Seberapa mendesak platform ini?"}
             value={formData.urgency || 3}
             onChange={(value) => setFormData({ ...formData, urgency: value })}
             labels={likertLabels.urgency}

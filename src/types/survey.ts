@@ -53,6 +53,10 @@ export interface StartupIdea {
   challenges?: string;
   customQuestion?: string;
   customOptions?: string[];
+  q1ProblemText?: string;
+  q2ExperienceText?: string;
+  q3UsefulnessText?: string;
+  q5UrgencyText?: string;
 }
 
 export interface RespondentProfile {

@@ -12,10 +12,27 @@ import { useSurveySession } from '@/hooks/use-survey-session'
 import { feedbackSchema } from '@/lib/validation'
 import { toast } from 'sonner'
 import { Loader2 } from 'lucide-react'
+import { getAllIdeas } from '@/data/ideas'
 
 export default function FeedbackPage() {
   const router = useRouter()
   const { session, isInitialized, saveFeedback, goToStep } = useSurveySession()
+
+  const ideas = getAllIdeas()
+  const chosenIdea = ideas.find(i => i.id === session.finalChoice?.firstChoiceId)
+  const chosenIdeaName = chosenIdea?.name || 'platform pilihan Anda'
+  const chosenIdeaId = chosenIdea?.id || ''
+
+  const getChallengeQuestion = (ideaId: string, ideaName: string) => {
+    const challengePrompts: Record<string, string> = {
+      '1': `Menurut Anda, apa tantangan atau risiko terbesar yang perlu diantisipasi oleh ${ideaName} (misalnya: masalah logistik pengiriman, jaminan kesegaran barang, atau sistem pembayaran aman)?`,
+      '2': `Menurut Anda, apa tantangan atau risiko terbesar yang perlu diantisipasi oleh ${ideaName} (misalnya: keamanan/keselamatan mahasiswa, komitmen kehadiran pekerja, atau kualitas hasil kerja harian)?`,
+      '3': `Menurut Anda, apa tantangan atau risiko terbesar yang perlu diantisipasi oleh ${ideaName} (misalnya: risiko hukum UU ITE bagi pelapor, maraknya laporan palsu/spam, atau tanggapan dari pemerintah terkait)?`,
+      '4': `Menurut Anda, apa tantangan atau risiko terbesar yang perlu diantisipasi oleh ${ideaName} (misalnya: perubahan aturan kepabeanan negara tujuan, jaminan standar mutu produk lokal, atau kendala bahasa dengan buyer asing)?`,
+      '5': `Menurut Anda, apa tantangan atau risiko terbesar yang perlu diantisipasi oleh ${ideaName} (misalnya: perubahan syarat visa/beasiswa yang mendadak, kesulitan memahami istilah dokumen hukum, atau pembaharuan data berkala)?`,
+    }
+    return challengePrompts[ideaId] || `Menurut Anda, apa tantangan atau risiko terbesar yang perlu diantisipasi oleh platform ${ideaName}?`
+  }
   
   const [formData, setFormData] = useState({
     mostImportantFeature: '',
@@ -99,7 +116,7 @@ export default function FeedbackPage() {
             {/* Most Important Feature */}
             <div className="space-y-2">
               <Label htmlFor="mostImportantFeature">
-                Fitur utama apa yang wajib ada agar platform pilihan Anda dapat benar-benar membantu? <span className="text-red-500">*</span>
+                Solusi utama apa yang wajib ada di <span className="font-semibold text-primary">{chosenIdeaName}</span> agar masalah Anda benar-benar teratasi? <span className="text-red-500">*</span>
               </Label>
               <Textarea
                 id="mostImportantFeature"
@@ -116,7 +133,7 @@ export default function FeedbackPage() {
             {/* Biggest Concern */}
             <div className="space-y-2">
               <Label htmlFor="biggestConcern">
-                Menurut Anda, apa tantangan atau risiko terbesar yang perlu diantisipasi platform tersebut? <span className="text-red-500">*</span>
+                {getChallengeQuestion(chosenIdeaId, chosenIdeaName)} <span className="text-red-500">*</span>
               </Label>
               <Textarea
                 id="biggestConcern"

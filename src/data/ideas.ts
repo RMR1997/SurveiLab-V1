@@ -22,7 +22,11 @@ export const startupIdeas: StartupIdea[] = [
       'Melalui grup WhatsApp / Sosial Media (Facebook, Instagram)',
       'Supermarket besar',
       'Belum menemukan produsen langsung, beli lewat perantara'
-    ]
+    ],
+    q1ProblemText: 'Seberapa sering Anda merasa dirugikan oleh harga bahan pangan yang mahal atau kualitas yang kurang segar akibat rantai distribusi yang terlalu panjang?',
+    q2ExperienceText: 'Apakah Anda (atau keluarga/teman) pernah kesulitan mendapatkan sayur, buah, atau daging segar langsung dari petani/peternak pertama?',
+    q3UsefulnessText: 'Seberapa membantu platform ini jika bisa menjamin Anda mendapatkan produk segar langsung dari petani dengan harga lebih murah?',
+    q5UrgencyText: 'Seberapa mendesak kehadiran platform penghubung produsen langsung seperti ini untuk segera diwujudkan di Indonesia?'
   },
   {
     id: '2',
@@ -45,7 +49,11 @@ export const startupIdeas: StartupIdea[] = [
       'Rekomendasi teman / Grup angkatan kuliah',
       'Mading kampus / Info internal kemahasiswaan',
       'Belum tahu harus mencari di mana'
-    ]
+    ],
+    q1ProblemText: 'Menurut Anda, seberapa sulit mahasiswa mencari uang saku tambahan yang aman, atau UMKM mencari bantuan tenaga harian yang murah?',
+    q2ExperienceText: 'Apakah Anda (sebagai mahasiswa/pelaku usaha) pernah kesulitan mencari kerja sampingan yang fleksibel atau mencari asisten harian?',
+    q3UsefulnessText: 'Seberapa membantu platform ini dalam membuka lapangan kerja harian bagi mahasiswa sekaligus mempermudah UMKM menyelesaikan kerjaan ringannya?',
+    q5UrgencyText: 'Seberapa mendesak kebutuhan wadah penyedia kerja harian mahasiswa (seperti MahasiswaBantu.id) untuk diluncurkan secepatnya?'
   },
   {
     id: '3',
@@ -67,8 +75,12 @@ export const startupIdeas: StartupIdea[] = [
       'Mengunggahnya ke sosial media (Instagram, Twitter, TikTok)',
       'Aplikasi resmi pemerintah (JAKI, Lapor.go.id, dll)',
       'Hanya mengeluh ke teman/keluarga saja',
-      'Membiarkannya saja karena bingung harus melapor ke mana'
-    ]
+      'Biarkannya saja karena bingung harus melapor ke mana'
+    ],
+    q1ProblemText: 'Seberapa sering Anda merasa terganggu atau bahaya oleh fasilitas umum yang rusak (jalan berlubang, jembatan rusak, lampu jalan mati) di sekitar Anda?',
+    q2ExperienceText: 'Apakah Anda atau orang terdekat Anda pernah mengalami kerugian atau kecelakaan akibat kerusakan fasilitas umum di jalan?',
+    q3UsefulnessText: 'Seberapa bermanfaat platform ini jika bisa mendokumentasikan jalan/jembatan rusak secara independen agar mendesak pemerintah segera memperbaikinya?',
+    q5UrgencyText: 'Seberapa mendesak kehadiran wadah pemantau infrastruktur independen seperti PantauKita bagi kenyamanan masyarakat saat ini?'
   },
   {
     id: '4',
@@ -91,7 +103,11 @@ export const startupIdeas: StartupIdea[] = [
       'Seminar / Kursus ekspor berbayar',
       'Googling / Mencari mandiri di YouTube',
       'Belum pernah mencari tahu'
-    ]
+    ],
+    q1ProblemText: 'Seberapa sulit menurut Anda bagi pelaku UMKM/petani lokal untuk menembus pasar ekspor luar negeri secara mandiri?',
+    q2ExperienceText: 'Apakah Anda atau kenalan pebisnis Anda pernah mengalami kebuntuan informasi/jalur saat ingin mencoba mengekspor produk lokal?',
+    q3UsefulnessText: 'Seberapa terbantu UMKM jika platform ini bisa memberikan pendampingan standar ekspor dan menghubungkan mereka langsung dengan pembeli asing?',
+    q5UrgencyText: 'Seberapa mendesak kebutuhan akan pusat informasi dan pendampingan ekspor terbuka seperti ExportHub untuk mendongkrak produk lokal?'
   },
   {
     id: '5',
@@ -114,7 +130,11 @@ export const startupIdeas: StartupIdea[] = [
       'Website resmi universitas atau kedutaan besar negara tujuan',
       'Forum / komunitas pemburu beasiswa (Schoters, Kobi, dll)',
       'Googling sendiri secara acak'
-    ]
+    ],
+    q1ProblemText: 'Seberapa pusing atau bingung Anda saat harus mencari tahu syarat dokumen, visa, dan langkah mandiri untuk kuliah/kerja ke luar negeri?',
+    q2ExperienceText: 'Apakah Anda atau teman terdekat Anda saat ini sedang atau pernah berjuang mempersiapkan syarat dokumen untuk ke luar negeri?',
+    q3UsefulnessText: 'Seberapa terbantu Anda jika ada platform yang menyediakan checklist dokumen lengkap dan panduan terstruktur langkah-demi-langkah ke luar negeri?',
+    q5UrgencyText: 'Seberapa mendesak kehadiran asisten panduan dokumen mandiri seperti GlobalPath.id bagi generasi muda Indonesia saat ini?'
   },
 ]
 
