@@ -1,11 +1,11 @@
 import { PrismaClient } from '@prisma/client'
+import { createClient } from '@libsql/client'
+import { PrismaLibSQL } from '@prisma/adapter-libsql'
 
-// Use Turso (libSQL) adapter in production, standard SQLite locally
-async function createPrismaClient() {
+const globalForPrisma = global as unknown as { prisma: PrismaClient }
+
+function createPrismaClient(): PrismaClient {
   if (process.env.TURSO_DATABASE_URL) {
-    const { createClient } = await import('@libsql/client')
-    const { PrismaLibSQL } = await import('@prisma/adapter-libsql')
-
     const libsql = createClient({
       url: process.env.TURSO_DATABASE_URL!,
       authToken: process.env.TURSO_AUTH_TOKEN,
@@ -16,9 +16,6 @@ async function createPrismaClient() {
   return new PrismaClient()
 }
 
-const globalForPrisma = global as unknown as { prisma: PrismaClient }
-
-export const prisma =
-  globalForPrisma.prisma || (await createPrismaClient())
+export const prisma = globalForPrisma.prisma ?? createPrismaClient()
 
 if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = prisma
