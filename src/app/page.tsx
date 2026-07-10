@@ -84,7 +84,7 @@ export default function LandingPage() {
               onClick={handleStart}
               className="text-lg px-8 h-14 rounded-xl gradient-btn group"
             >
-              Mulai Survey
+              Mulai Survei
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
             <p className="text-sm text-muted-foreground">
@@ -164,10 +164,10 @@ export default function LandingPage() {
               <span>Cerita di Balik Platform Ini</span>
             </div>
             <h2 className="text-2xl sm:text-3xl font-bold mb-4">
-              Kenapa Gue Bikin Semua Ini?
+              Mengapa Kami Mengembangkan Platform Ini?
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
-              Bukan sekadar ide bisnis — ini keresahan nyata yang gue lihat dan rasakan sendiri di sekitar gue.
+              Bukan sekadar ide bisnis — ini keresahan nyata yang kami lihat dan rasakan sendiri di sekitar kami.
             </p>
           </div>
 
@@ -197,7 +197,7 @@ export default function LandingPage() {
                   <div className="flex gap-3 p-3 rounded-xl bg-rose-50 dark:bg-rose-950/30 border border-rose-100 dark:border-rose-900/40">
                     <span className="flex-shrink-0">❤️</span>
                     <div>
-                      <p className="text-xs font-semibold text-rose-600 dark:text-rose-400 mb-1">Keresahan</p>
+                      <p className="text-xs font-semibold text-rose-600 dark:text-rose-400 mb-1">Latar Belakang & Keresahan</p>
                       <p className="text-xs text-rose-700/80 dark:text-rose-300/80 leading-relaxed">{idea.motivation}</p>
                     </div>
                   </div>
@@ -207,7 +207,7 @@ export default function LandingPage() {
                   <div className="flex gap-3 p-3 rounded-xl bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-100 dark:border-emerald-900/40">
                     <span className="flex-shrink-0">📈</span>
                     <div>
-                      <p className="text-xs font-semibold text-emerald-600 dark:text-emerald-400 mb-1">Potensi</p>
+                      <p className="text-xs font-semibold text-emerald-600 dark:text-emerald-400 mb-1">Potensi & Dampak</p>
                       <p className="text-xs text-emerald-700/80 dark:text-emerald-300/80 leading-relaxed">{idea.benefits}</p>
                     </div>
                   </div>
@@ -217,7 +217,7 @@ export default function LandingPage() {
                   <div className="flex gap-3 p-3 rounded-xl bg-amber-50 dark:bg-amber-950/30 border border-amber-100 dark:border-amber-900/40">
                     <span className="flex-shrink-0">⚠️</span>
                     <div>
-                      <p className="text-xs font-semibold text-amber-600 dark:text-amber-400 mb-1">Tantangan</p>
+                      <p className="text-xs font-semibold text-amber-600 dark:text-amber-400 mb-1">Tantangan Utama</p>
                       <p className="text-xs text-amber-700/80 dark:text-amber-300/80 leading-relaxed">{idea.challenges}</p>
                     </div>
                   </div>
@@ -236,7 +236,7 @@ export default function LandingPage() {
             Setiap pendapat Anda sangat berarti untuk masa depan startup Indonesia.
           </p>
           <Button size="lg" onClick={handleStart} className="rounded-xl px-8">
-            Mulai Survey Sekarang
+            Mulai Survei Sekarang
           </Button>
         </Container>
       </section>

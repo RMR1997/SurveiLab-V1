@@ -4,7 +4,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: 'SurveiLab',
     short_name: 'SurveiLab',
-    description: 'Platform survey untuk validasi ide startup Indonesia',
+    description: 'Platform survei untuk validasi ide startup Indonesia',
     start_url: '/',
     display: 'standalone',
     background_color: '#ffffff',

@@ -11,7 +11,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: 'SurveiLab - Validasi Ide Startup Anda',
-  description: 'Platform survey untuk melakukan concept testing terhadap ide bisnis digital. Dapatkan insight dari calon pengguna untuk keputusan yang lebih baik.',
+  description: 'Platform survei untuk melakukan concept testing terhadap ide bisnis digital. Dapatkan insight dari calon pengguna untuk keputusan yang lebih baik.',
 }
 
 export default function RootLayout({

@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useState } from 'react'
+import { useRouter } from 'next/navigation'
 import { motion } from 'framer-motion'
 import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
@@ -8,7 +9,7 @@ import {
 } from 'recharts'
 import {
   BarChart3, Users, CheckCircle, Clock, Trophy, ChevronDown, ChevronUp,
-  RefreshCw, Star, MessageSquare, Target, Zap, Trash2, AlertTriangle
+  RefreshCw, Star, MessageSquare, Target, Zap, Trash2, AlertTriangle, LogOut
 } from 'lucide-react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
@@ -40,6 +41,7 @@ const OCC_LABELS: Record<string, string> = {
 }
 
 export default function AdminDashboard() {
+  const router = useRouter()
   const [analytics, setAnalytics] = useState<any>(null)
   const [responses, setResponses] = useState<any[]>([])
   const [loading, setLoading] = useState(true)
@@ -51,6 +53,19 @@ export default function AdminDashboard() {
   const [deleteError, setDeleteError] = useState<string | null>(null)
 
   useEffect(() => { fetchAll() }, [])
+
+  const handleLogout = async () => {
+    try {
+      const res = await fetch('/api/admin/logout', { method: 'POST' })
+      const data = await res.json()
+      if (data.success) {
+        router.push('/admin/login')
+        router.refresh()
+      }
+    } catch (e) {
+      console.error('Logout error:', e)
+    }
+  }
 
   const handleDelete = async () => {
     if (!deleteTarget) return
@@ -149,12 +164,18 @@ export default function AdminDashboard() {
               <BarChart3 className="w-6 h-6 text-primary" />
               Admin Dashboard
             </h1>
-            <p className="text-sm text-muted-foreground">Data hasil survey SurveiLab</p>
+            <p className="text-sm text-muted-foreground">Data hasil survei SurveiLab</p>
           </div>
-          <Button variant="outline" size="sm" onClick={fetchAll} className="gap-2">
-            <RefreshCw className="w-4 h-4" />
-            Refresh
-          </Button>
+          <div className="flex items-center gap-2">
+            <Button variant="outline" size="sm" onClick={fetchAll} className="gap-2">
+              <RefreshCw className="w-4 h-4" />
+              Refresh
+            </Button>
+            <Button variant="destructive" size="sm" onClick={handleLogout} className="gap-2">
+              <LogOut className="w-4 h-4" />
+              Keluar
+            </Button>
+          </div>
         </div>
         {/* Tabs */}
         <div className="max-w-7xl mx-auto px-6 flex gap-1 pb-0">
@@ -500,7 +521,7 @@ export default function AdminDashboard() {
                                 <span className="text-xs text-muted-foreground ml-2">Pilihan ke-2: {r.finalChoice.secondChoice}</span>
                               )}
                             </div>
-                            <p className="text-sm text-muted-foreground italic">"{r.finalChoice.reason}"</p>
+                            <p className="text-sm text-muted-foreground italic">&ldquo;{r.finalChoice.reason}&rdquo;</p>
                           </div>
                         </div>
                       )}

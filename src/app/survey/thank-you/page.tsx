@@ -92,7 +92,7 @@ export default function ThankYouPage() {
                 className="rounded-xl gap-2"
               >
                 <Share2 className="w-4 h-4" />
-                Bagikan Survey
+                Bagikan Survei
               </Button>
               <Button
                 onClick={handleRestart}

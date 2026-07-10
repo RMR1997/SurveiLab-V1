@@ -11,7 +11,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Card, CardContent } from '@/components/ui/card'
 import { Slider } from '@/components/ui/slider'
 import { useSurveySession } from '@/hooks/use-survey-session'
-import { ageRangeOptions, occupationOptions } from '@/data/questions'
+import { ageRangeOptions, occupationOptions, provinceOptions } from '@/data/questions'
 import { ProfileInput, profileSchema } from '@/lib/validation'
 import { toast } from 'sonner'
 import { Loader2 } from 'lucide-react'
@@ -79,7 +79,7 @@ export default function ProfilePage() {
       transition={{ duration: 0.3 }}
     >
       <Card className="border-0 shadow-xl bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl">
-        <CardContent className="p-8">
+        <CardContent className="p-5 sm:p-8">
           <div className="text-center mb-8">
             <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
               <User className="w-7 h-7 text-primary" />
@@ -133,13 +133,22 @@ export default function ProfilePage() {
 
             {/* Location */}
             <div className="space-y-2">
-              <Label htmlFor="location">Domisili (Kota/Provinsi)</Label>
-              <Input
-                id="location"
+              <Label htmlFor="location">Domisili (Provinsi)</Label>
+              <Select
                 value={formData.location}
-                onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-                placeholder="Contoh: Jakarta, Bandung, Surabaya..."
-              />
+                onValueChange={(value) => setFormData({ ...formData, location: value })}
+              >
+                <SelectTrigger id="location">
+                  <SelectValue placeholder="Pilih provinsi domisili" />
+                </SelectTrigger>
+                <SelectContent>
+                  {provinceOptions.map((option) => (
+                    <SelectItem key={option.value} value={option.value}>
+                      {option.label}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
             </div>
 
             {/* Tech Savviness */}

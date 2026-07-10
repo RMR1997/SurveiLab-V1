@@ -22,9 +22,10 @@ export function ConceptCard({ idea, className }: ConceptCardProps) {
         {/* Mockup Preview */}
         <div className="relative aspect-video bg-gradient-to-br from-gray-100 to-gray-200 dark:from-slate-700 dark:to-slate-800 overflow-hidden">
           {idea.mockupUrl ? (
-            <div 
-              className="absolute inset-0 bg-contain bg-center bg-no-repeat bg-white dark:bg-slate-800"
-              style={{ backgroundImage: `url(${idea.mockupUrl})` }}
+            <img 
+              src={idea.mockupUrl} 
+              alt={`Mockup antarmuka untuk platform ${idea.name}`}
+              className="absolute inset-0 w-full h-full object-contain bg-white dark:bg-slate-800"
             />
           ) : (
             <div className="absolute inset-0 flex items-center justify-center">
@@ -77,7 +78,7 @@ export function ConceptCard({ idea, className }: ConceptCardProps) {
                 <div className="flex gap-3 p-3 rounded-xl bg-rose-50 dark:bg-rose-950/30 border border-rose-100 dark:border-rose-900/40">
                   <Heart className="w-4 h-4 text-rose-500 flex-shrink-0 mt-0.5" />
                   <div>
-                    <p className="text-xs font-semibold text-rose-600 dark:text-rose-400 mb-1">Kenapa Gue Bikin Ini</p>
+                    <p className="text-xs font-semibold text-rose-600 dark:text-rose-400 mb-1">Latar Belakang & Keresahan</p>
                     <p className="text-xs text-rose-700/80 dark:text-rose-300/80 leading-relaxed">{idea.motivation}</p>
                   </div>
                 </div>

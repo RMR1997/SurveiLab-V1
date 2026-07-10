@@ -19,7 +19,7 @@ export function NPSScale({ value, onChange, className }: NPSScaleProps) {
 
   return (
     <div className={cn("space-y-3", className)}>
-      <div className="flex items-center justify-between gap-1 sm:gap-1.5">
+      <div className="grid grid-cols-6 gap-2 sm:flex sm:items-center sm:justify-between sm:gap-1.5">
         {options.map((option) => {
           const isSelected = value === option
           const colorClass = getColorClass(option)
@@ -30,7 +30,7 @@ export function NPSScale({ value, onChange, className }: NPSScaleProps) {
               type="button"
               onClick={() => onChange(option)}
               className={cn(
-                "w-7 h-9 sm:w-10 sm:h-12 rounded-lg font-semibold text-xs sm:text-sm",
+                "w-full h-10 sm:w-10 sm:h-12 rounded-lg font-semibold text-xs sm:text-sm",
                 "transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring",
                 "hover:scale-105 active:scale-95 flex items-center justify-center",
                 isSelected

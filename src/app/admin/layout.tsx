@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Admin Dashboard - SurveiLab',
-  description: 'Dashboard admin untuk melihat hasil survey',
+  description: 'Dashboard admin untuk melihat hasil survei',
 }
 
 export default function AdminLayout({

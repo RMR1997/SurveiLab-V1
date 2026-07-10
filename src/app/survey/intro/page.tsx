@@ -58,11 +58,11 @@ export default function IntroPage() {
         </div>
         
         <h1 className="text-3xl sm:text-4xl font-bold">
-          Mari Kenalan Dulu
+          Mari Berkenalan Terlebih Dahulu
         </h1>
         
         <p className="text-muted-foreground text-lg max-w-lg mx-auto">
-          Terima kasih telah meluangkan waktu untuk membantu kami. Survey ini akan membantu kami menentukan ide startup mana yang paling bermanfaat untuk masyarakat Indonesia.
+          Terima kasih telah meluangkan waktu untuk membantu kami. Survei ini akan membantu kami menentukan ide startup mana yang paling bermanfaat untuk masyarakat Indonesia.
         </p>
       </div>
 
@@ -71,21 +71,21 @@ export default function IntroPage() {
           {
             icon: Clock,
             title: "3-5 Menit",
-            desc: "Waktu yang dibutuhkan untuk menyelesaikan survey"
+            desc: "Waktu yang dibutuhkan untuk menyelesaikan survei"
           },
           {
             icon: Shield,
             title: "Anonim & Aman",
-            desc: "Jawaban Anda sepenuhnya rahasia dan tidak dijual"
+            desc: "Jawaban Anda sepenuhnya rahasia dan tidak diperjualbelikan"
           },
           {
             icon: Sparkles,
-            title: "5 Startup Ideas",
+            title: "5 Ide Startup",
             desc: "Nilai konsep dan berikan masukan terbaik Anda"
           }
         ].map((item, index) => (
           <Card key={index} className="border-0 shadow-sm bg-white/70 dark:bg-slate-800/70 backdrop-blur">
-            <CardContent className="p-6 text-center">
+            <CardContent className="p-5 sm:p-6 text-center">
               <item.icon className="w-10 h-10 text-primary mx-auto mb-3" />
               <h3 className="font-semibold mb-1">{item.title}</h3>
               <p className="text-sm text-muted-foreground">{item.desc}</p>
