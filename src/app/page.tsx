@@ -47,7 +47,7 @@ export default function LandingPage() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
               <Sparkles className="w-4 h-4" />
-              <span>Platform Validasi Ide No. 1 di Indonesia</span>
+              <span>Suara Anda, Masa Depan Startup Indonesia</span>
             </div>
           </motion.div>
 

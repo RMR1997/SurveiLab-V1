@@ -99,7 +99,7 @@ export default function FeedbackPage() {
             {/* Most Important Feature */}
             <div className="space-y-2">
               <Label htmlFor="mostImportantFeature">
-                Menurut Anda, fitur apa yang paling penting untuk platform terpilih? <span className="text-red-500">*</span>
+                Fitur utama apa yang wajib ada agar platform pilihan Anda dapat benar-benar membantu? <span className="text-red-500">*</span>
               </Label>
               <Textarea
                 id="mostImportantFeature"
@@ -116,7 +116,7 @@ export default function FeedbackPage() {
             {/* Biggest Concern */}
             <div className="space-y-2">
               <Label htmlFor="biggestConcern">
-                Apa kekhawatiran terbesar Anda terhadap platform yang dipilih? <span className="text-red-500">*</span>
+                Menurut Anda, apa tantangan atau risiko terbesar yang perlu diantisipasi platform tersebut? <span className="text-red-500">*</span>
               </Label>
               <Textarea
                 id="biggestConcern"
@@ -133,7 +133,7 @@ export default function FeedbackPage() {
             {/* Other Ideas */}
             <div className="space-y-2">
               <Label htmlFor="otherIdeas">
-                Apakah ada ide lain yang menurut Anda lebih dibutuhkan masyarakat Indonesia? (Opsional)
+                Punya ide platform digital lain yang menurut Anda sangat mendesak untuk Indonesia saat ini? Bagikan dengan kami! (Opsional)
               </Label>
               <Textarea
                 id="otherIdeas"
