@@ -15,6 +15,14 @@ export const startupIdeas: StartupIdea[] = [
     colorPrimary: '#10B981',
     sortOrder: 1,
     isActive: true,
+    customQuestion: 'Di mana Anda biasanya mencari atau membeli produk segar (sayur, buah, daging) langsung dari produsen pertama?',
+    customOptions: [
+      'Pasar tradisional lokal',
+      'Supplier / Distributor konvensional',
+      'Melalui grup WhatsApp / Sosial Media (Facebook, Instagram)',
+      'Supermarket besar',
+      'Belum menemukan produsen langsung, beli lewat perantara'
+    ]
   },
   {
     id: '2',
@@ -30,6 +38,14 @@ export const startupIdeas: StartupIdea[] = [
     colorPrimary: '#8B5CF6',
     sortOrder: 2,
     isActive: true,
+    customQuestion: 'Di mana Anda biasanya mencari atau menawarkan pekerjaan sampingan/harian?',
+    customOptions: [
+      'Platform freelance (Fiverr, Projects.co.id, Fastwork, dll)',
+      'Sosial Media (X/Twitter, Instagram, LinkedIn)',
+      'Rekomendasi teman / Grup angkatan kuliah',
+      'Mading kampus / Info internal kemahasiswaan',
+      'Belum tahu harus mencari di mana'
+    ]
   },
   {
     id: '3',
@@ -45,6 +61,14 @@ export const startupIdeas: StartupIdea[] = [
     colorPrimary: '#F59E0B',
     sortOrder: 3,
     isActive: true,
+    customQuestion: 'Ke mana Anda biasanya melaporkan keluhan tentang fasilitas umum yang rusak?',
+    customOptions: [
+      'Melaporkannya langsung ke RT/RW atau Kelurahan',
+      'Mengunggahnya ke sosial media (Instagram, Twitter, TikTok)',
+      'Aplikasi resmi pemerintah (JAKI, Lapor.go.id, dll)',
+      'Hanya mengeluh ke teman/keluarga saja',
+      'Membiarkannya saja karena bingung harus melapor ke mana'
+    ]
   },
   {
     id: '4',
@@ -60,6 +84,14 @@ export const startupIdeas: StartupIdea[] = [
     colorPrimary: '#3B82F6',
     sortOrder: 4,
     isActive: true,
+    customQuestion: 'Di mana Anda biasanya mencari informasi/buyer untuk keperluan ekspor produk?',
+    customOptions: [
+      'Website resmi kementerian/instansi pemerintah (Kemenkop, Kemendag)',
+      'Asosiasi ekspor atau komunitas bisnis ekspor',
+      'Seminar / Kursus ekspor berbayar',
+      'Googling / Mencari mandiri di YouTube',
+      'Belum pernah mencari tahu'
+    ]
   },
   {
     id: '5',
@@ -75,6 +107,14 @@ export const startupIdeas: StartupIdea[] = [
     colorPrimary: '#EC4899',
     sortOrder: 5,
     isActive: true,
+    customQuestion: 'Di mana Anda biasanya mencari informasi tepercaya tentang beasiswa/kerja ke luar negeri?',
+    customOptions: [
+      'Agen konsultan pendidikan / kerja luar negeri (berbayar)',
+      'Akun edukasi / influencer di sosial media (TikTok, Instagram, YouTube)',
+      'Website resmi universitas atau kedutaan besar negara tujuan',
+      'Forum / komunitas pemburu beasiswa (Schoters, Kobi, dll)',
+      'Googling sendiri secara acak'
+    ]
   },
 ]
 

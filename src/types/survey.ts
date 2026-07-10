@@ -51,6 +51,8 @@ export interface StartupIdea {
   motivation?: string;
   benefits?: string;
   challenges?: string;
+  customQuestion?: string;
+  customOptions?: string[];
 }
 
 export interface RespondentProfile {
@@ -69,6 +71,7 @@ export interface IdeaResponse {
   urgency: number;
   npsScore: number;
   conceptClarity: ClarityLevel;
+  customBehaviorAnswer?: string;
 }
 
 export interface FinalChoice {

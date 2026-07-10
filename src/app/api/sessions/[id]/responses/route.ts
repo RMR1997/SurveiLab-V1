@@ -52,6 +52,7 @@ export async function POST(
         urgency: result.data.urgency,
         npsScore: result.data.npsScore,
         conceptClarity: result.data.conceptClarity,
+        customBehaviorAnswer: result.data.customBehaviorAnswer,
       },
       update: {
         problemSeverity: result.data.problemSeverity,
@@ -61,6 +62,7 @@ export async function POST(
         urgency: result.data.urgency,
         npsScore: result.data.npsScore,
         conceptClarity: result.data.conceptClarity,
+        customBehaviorAnswer: result.data.customBehaviorAnswer,
       },
     })
 

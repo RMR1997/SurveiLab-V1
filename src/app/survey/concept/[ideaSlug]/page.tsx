@@ -42,6 +42,7 @@ export default function ConceptPage() {
     urgency: 3,
     npsScore: 5,
     conceptClarity: undefined,
+    customBehaviorAnswer: undefined,
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
 
@@ -75,6 +76,11 @@ export default function ConceptPage() {
   const handleSubmit = async () => {
     if (!idea) return
     
+    if (idea.customQuestion && !formData.customBehaviorAnswer) {
+      toast.error('Silakan pilih jawaban untuk pertanyaan tambahan di bagian bawah')
+      return
+    }
+    
     const result = ideaResponseSchema.safeParse(formData)
     if (!result.success) {
       const error = result.error.errors[0]
@@ -94,6 +100,7 @@ export default function ConceptPage() {
       urgency: result.data.urgency,
       npsScore: result.data.npsScore,
       conceptClarity: result.data.conceptClarity,
+      customBehaviorAnswer: result.data.customBehaviorAnswer,
     }
     
     const success = await saveResponse(idea.id, responseData)
@@ -215,6 +222,20 @@ export default function ConceptPage() {
             value={formData.conceptClarity || ''}
             onChange={(value) => setFormData({ ...formData, conceptClarity: value as any })}
           />
+
+          {/* Q8: Custom Behavioral Question */}
+          {idea.customQuestion && idea.customOptions && (
+            <>
+              <div className="h-px bg-border/55 w-full my-6" />
+              <RadioQuestion
+                id="customBehaviorAnswer"
+                question={idea.customQuestion}
+                options={idea.customOptions.map(opt => ({ value: opt, label: opt }))}
+                value={formData.customBehaviorAnswer || ''}
+                onChange={(value) => setFormData({ ...formData, customBehaviorAnswer: value })}
+              />
+            </>
+          )}
         </CardContent>
       </Card>
 

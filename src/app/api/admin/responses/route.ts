@@ -42,6 +42,7 @@ export async function GET() {
         urgency: r.urgency,
         npsScore: r.npsScore,
         conceptClarity: clarityLabels[r.conceptClarity] || r.conceptClarity,
+        customBehaviorAnswer: r.customBehaviorAnswer || null,
       })),
       finalChoice: session.finalChoice ? {
         firstChoice: ideaMap.get(session.finalChoice.firstChoiceId)?.name || '-',

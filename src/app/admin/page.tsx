@@ -503,6 +503,12 @@ export default function AdminDashboard() {
                                     </div>
                                   ))}
                                 </div>
+                                {resp.customBehaviorAnswer && (
+                                  <div className="mt-3 pt-3 border-t border-border/50 text-xs">
+                                    <span className="text-muted-foreground font-medium block mb-1">Jalur / Cara Sourcing Responden:</span>
+                                    <span className="font-semibold text-foreground bg-muted/30 px-2 py-1.5 rounded-lg inline-block">{resp.customBehaviorAnswer}</span>
+                                  </div>
+                                )}
                               </div>
                             ))}
                           </div>
