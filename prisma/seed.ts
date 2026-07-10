@@ -8,6 +8,7 @@ async function main() {
   // Seed startup ideas
   const ideas = [
     {
+      id: '1',
       slug: 'produsen-nusantara',
       name: 'Produsen Nusantara',
       tagline: 'Hubungkan Petani Langsung dengan Buyer',
@@ -18,6 +19,7 @@ async function main() {
       sortOrder: 1,
     },
     {
+      id: '2',
       slug: 'mahasiswa-bantu',
       name: 'MahasiswaBantu.id',
       tagline: 'Mahasiswa Bantu UMKM Tumbuh',
@@ -28,6 +30,7 @@ async function main() {
       sortOrder: 2,
     },
     {
+      id: '3',
       slug: 'pantau-kita',
       name: 'PantauKita',
       tagline: 'Awasi Pembangunan Bersama',
@@ -38,6 +41,7 @@ async function main() {
       sortOrder: 3,
     },
     {
+      id: '4',
       slug: 'export-hub',
       name: 'ExportHub Indonesia',
       tagline: 'Bawa Produk Indonesia ke Dunia',
@@ -48,6 +52,7 @@ async function main() {
       sortOrder: 4,
     },
     {
+      id: '5',
       slug: 'global-path',
       name: 'GlobalPath.id',
       tagline: 'Persiapkan Masa Depan Globalmu',
