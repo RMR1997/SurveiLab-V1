@@ -6,8 +6,11 @@ const globalForPrisma = global as unknown as { prisma: PrismaClient }
 
 function createPrismaClient(): PrismaClient {
   if (process.env.TURSO_DATABASE_URL) {
+    // Convert libsql:// to https:// for serverless compatibility
+    // libsql:// uses WebSocket which doesn't work on Vercel/serverless
+    const url = process.env.TURSO_DATABASE_URL.replace('libsql://', 'https://')
     const libsql = createClient({
-      url: process.env.TURSO_DATABASE_URL!,
+      url,
       authToken: process.env.TURSO_AUTH_TOKEN,
     })
     const adapter = new PrismaLibSQL(libsql)
