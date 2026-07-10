@@ -134,21 +134,21 @@ export default function ProfilePage() {
             {/* Location */}
             <div className="space-y-2">
               <Label htmlFor="location">Domisili (Provinsi)</Label>
-              <Select
-                value={formData.location}
-                onValueChange={(value) => setFormData({ ...formData, location: value })}
-              >
-                <SelectTrigger id="location">
-                  <SelectValue placeholder="Pilih provinsi domisili" />
-                </SelectTrigger>
-                <SelectContent>
-                  {provinceOptions.map((option) => (
-                    <SelectItem key={option.value} value={option.value}>
-                      {option.label}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
+              <Input
+                id="location"
+                list="provinces"
+                value={formData.location || ''}
+                onChange={(e) => setFormData({ ...formData, location: e.target.value })}
+                placeholder="Ketik untuk mencari provinsi domisili..."
+                className="rounded-xl h-11"
+              />
+              <datalist id="provinces">
+                {provinceOptions.map((option) => (
+                  <option key={option.value} value={option.value}>
+                    {option.label}
+                  </option>
+                ))}
+              </datalist>
             </div>
 
             {/* Tech Savviness */}
