@@ -3,15 +3,16 @@
 import { useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { motion } from 'framer-motion'
-import { ArrowRight, Lightbulb, Users, BarChart3, Sparkles } from 'lucide-react'
+import { ArrowRight, Lightbulb, Users, BarChart3, Sparkles, Loader2 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Container } from '@/components/layout/container'
 import { useSurveySession } from '@/hooks/use-survey-session'
 import { getAllIdeas } from '@/data/ideas'
+import { toast } from 'sonner'
 
 export default function LandingPage() {
   const router = useRouter()
-  const { session, createSession, resetSession } = useSurveySession()
+  const { session, createSession, resetSession, isLoading } = useSurveySession()
   const ideas = getAllIdeas()
 
   useEffect(() => {
@@ -26,6 +27,8 @@ export default function LandingPage() {
     const sessionId = await createSession()
     if (sessionId) {
       router.push('/survey/intro')
+    } else {
+      toast.error('Gagal memulai survei. Silakan coba lagi beberapa saat lagi (database sedang bersiap).')
     }
   }
 
@@ -82,10 +85,20 @@ export default function LandingPage() {
             <Button
               size="lg"
               onClick={handleStart}
-              className="text-lg px-8 h-14 rounded-xl gradient-btn group"
+              disabled={isLoading}
+              className="text-lg px-8 h-14 rounded-xl gradient-btn group min-w-[200px]"
             >
-              Mulai Survei
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              {isLoading ? (
+                <>
+                  <Loader2 className="w-5 h-5 animate-spin mr-2" />
+                  Memuat...
+                </>
+              ) : (
+                <>
+                  Mulai Survei
+                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </>
+              )}
             </Button>
             <p className="text-sm text-muted-foreground">
               ⏱️ Hanya 3-5 menit • Tidak ada jawaban salah
@@ -235,8 +248,20 @@ export default function LandingPage() {
           <p className="text-muted-foreground mb-6">
             Setiap pendapat Anda sangat berarti untuk masa depan startup Indonesia.
           </p>
-          <Button size="lg" onClick={handleStart} className="rounded-xl px-8">
-            Mulai Survei Sekarang
+          <Button
+            size="lg"
+            onClick={handleStart}
+            disabled={isLoading}
+            className="rounded-xl px-8 min-w-[200px]"
+          >
+            {isLoading ? (
+              <>
+                <Loader2 className="w-5 h-5 animate-spin mr-2" />
+                Memuat...
+              </>
+            ) : (
+              "Mulai Survei Sekarang"
+            )}
           </Button>
         </Container>
       </section>
