@@ -33,6 +33,8 @@ export async function GET() {
         techSavviness: session.profile.techSavviness,
       } : null,
       responses: session.responses.map(r => ({
+        ideaId: r.ideaId,
+        ideaSlug: ideaMap.get(r.ideaId)?.slug || '',
         ideaName: ideaMap.get(r.ideaId)?.name || r.ideaId,
         ideaColor: ideaMap.get(r.ideaId)?.colorPrimary || '#888',
         problemSeverity: r.problemSeverity,
@@ -43,6 +45,7 @@ export async function GET() {
         npsScore: r.npsScore,
         conceptClarity: clarityLabels[r.conceptClarity] || r.conceptClarity,
         customBehaviorAnswer: r.customBehaviorAnswer || null,
+        customAnswers: r.customAnswers ? JSON.parse(r.customAnswers) : null,
       })),
       finalChoice: session.finalChoice ? {
         firstChoice: ideaMap.get(session.finalChoice.firstChoiceId)?.name || '-',

@@ -36,6 +36,12 @@ export type ClarityLevel =
   | 'NOT_VERY_HELPFUL' 
   | 'NOT_HELPFUL';
 
+export interface CustomQuestionConfig {
+  id: string;
+  question: string;
+  options: string[];
+}
+
 // Main types
 export interface StartupIdea {
   id: string;
@@ -53,6 +59,7 @@ export interface StartupIdea {
   challenges?: string;
   customQuestion?: string;
   customOptions?: string[];
+  customQuestions?: CustomQuestionConfig[];
   q1ProblemText?: string;
   q2ExperienceText?: string;
   q3UsefulnessText?: string;
@@ -76,6 +83,7 @@ export interface IdeaResponse {
   npsScore: number;
   conceptClarity: ClarityLevel;
   customBehaviorAnswer?: string;
+  customAnswers?: Record<string, string>;
 }
 
 export interface FinalChoice {

@@ -33,7 +33,7 @@ export default function ConceptPage() {
   const nextIdea = allIdeas[currentIndex + 1]
   const prevIdea = allIdeas[currentIndex - 1]
   
-  const [formData, setFormData] = useState<Partial<IdeaResponseInput>>({
+  const [formData, setFormData] = useState<Partial<IdeaResponseInput> & { customAnswers?: Record<string, string> }>({
     ideaId: idea?.id,
     problemSeverity: 3,
     experienceType: undefined,
@@ -43,6 +43,7 @@ export default function ConceptPage() {
     npsScore: 5,
     conceptClarity: undefined,
     customBehaviorAnswer: undefined,
+    customAnswers: {},
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
 
@@ -63,7 +64,11 @@ export default function ConceptPage() {
     // Restore saved response if exists
     const saved = session.responses[idea.id]
     if (saved) {
-      setFormData({ ...saved, ideaId: idea.id })
+      setFormData({ 
+        ...saved, 
+        ideaId: idea.id,
+        customAnswers: saved.customAnswers || {}
+      })
     }
 
     // Update step only if moving forward to avoid resetting progress
@@ -76,7 +81,15 @@ export default function ConceptPage() {
   const handleSubmit = async () => {
     if (!idea) return
     
-    if (idea.customQuestion && !formData.customBehaviorAnswer) {
+    if (idea.customQuestions && idea.customQuestions.length > 0) {
+      const answers = formData.customAnswers || {}
+      for (const q of idea.customQuestions) {
+        if (!answers[q.id]) {
+          toast.error(`Silakan jawab pertanyaan: "${q.question.substring(0, 35)}..."`)
+          return
+        }
+      }
+    } else if (idea.customQuestion && !formData.customBehaviorAnswer) {
       toast.error('Silakan pilih jawaban untuk pertanyaan tambahan di bagian bawah')
       return
     }
@@ -101,6 +114,7 @@ export default function ConceptPage() {
       npsScore: result.data.npsScore,
       conceptClarity: result.data.conceptClarity,
       customBehaviorAnswer: result.data.customBehaviorAnswer,
+      customAnswers: formData.customAnswers || {},
     }
     
     const success = await saveResponse(idea.id, responseData)
@@ -223,8 +237,30 @@ export default function ConceptPage() {
             onChange={(value) => setFormData({ ...formData, conceptClarity: value as any })}
           />
 
-          {/* Q8: Custom Behavioral Question */}
-          {idea.customQuestion && idea.customOptions && (
+          {/* Q8: Custom Behavioral Questions */}
+          {idea.customQuestions && idea.customQuestions.length > 0 ? (
+            idea.customQuestions.map((q) => (
+              <div key={q.id}>
+                <div className="h-px bg-border/55 w-full my-6" />
+                <RadioQuestion
+                  id={q.id}
+                  question={q.question}
+                  options={q.options.map(opt => ({ value: opt, label: opt }))}
+                  value={formData.customAnswers?.[q.id] || ''}
+                  onChange={(value) => {
+                    const currentAnswers = formData.customAnswers || {}
+                    setFormData({
+                      ...formData,
+                      customAnswers: {
+                        ...currentAnswers,
+                        [q.id]: value
+                      }
+                    })
+                  }}
+                />
+              </div>
+            ))
+          ) : idea.customQuestion && idea.customOptions ? (
             <>
               <div className="h-px bg-border/55 w-full my-6" />
               <RadioQuestion
@@ -235,7 +271,7 @@ export default function ConceptPage() {
                 onChange={(value) => setFormData({ ...formData, customBehaviorAnswer: value })}
               />
             </>
-          )}
+          ) : null}
         </CardContent>
       </Card>
 

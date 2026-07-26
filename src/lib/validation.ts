@@ -61,6 +61,7 @@ export const ideaResponseSchema = z.object({
     required_error: 'Pilih tingkat kejelasan',
   }),
   customBehaviorAnswer: z.string().optional(),
+  customAnswers: z.record(z.string()).optional(),
 })
 
 // Final Choice Validation

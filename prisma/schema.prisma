@@ -80,6 +80,9 @@ model IdeaResponse {
   // Custom behavioral question (Q8)
   customBehaviorAnswer String?
   
+  // Custom answers stored in JSON format (e.g. {"sourcing": "...", "anggaran": "..."})
+  customAnswers   String?
+  
   // Timestamps
   answeredAt      DateTime @default(now())
   

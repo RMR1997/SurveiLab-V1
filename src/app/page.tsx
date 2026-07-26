@@ -50,7 +50,7 @@ export default function LandingPage() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
               <Sparkles className="w-4 h-4" />
-              <span>Suara Anda, Masa Depan Startup Indonesia</span>
+              <span>Suara Anda, Masa Depan Solusi Digital Indonesia</span>
             </div>
           </motion.div>
 
@@ -61,7 +61,7 @@ export default function LandingPage() {
             className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6"
           >
             Bantu Kami Memilih{' '}
-            <span className="text-gradient">Startup Terbaik</span>
+            <span className="text-gradient">Solusi Digital Terbaik</span>
             <br className="hidden sm:block" />
             untuk Indonesia
           </motion.h1>
@@ -72,7 +72,7 @@ export default function LandingPage() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-8"
           >
-            Kami punya 5 ide startup yang ingin membantu masyarakat Indonesia. 
+            Kami punya 5 ide produk digital yang ingin membantu masyarakat Indonesia. 
             Pendapat Anda sangat berharga untuk menentukan ide mana yang akan kami wujudkan terlebih dahulu.
           </motion.p>
 
@@ -246,7 +246,7 @@ export default function LandingPage() {
         <Container size="small" className="text-center">
           <h2 className="text-2xl font-bold mb-4">Siap untuk Membantu?</h2>
           <p className="text-muted-foreground mb-6">
-            Setiap pendapat Anda sangat berarti untuk masa depan startup Indonesia.
+            Setiap pendapat Anda sangat berarti untuk masa depan solusi digital Indonesia.
           </p>
           <Button
             size="lg"
@@ -269,7 +269,7 @@ export default function LandingPage() {
       {/* Footer */}
       <footer className="py-8 border-t border-border/50">
                 <Container className="text-center text-sm text-muted-foreground">
-          <p>© 2024 SurveiLab. Built with care for Indonesia.</p>
+          <p>© 2026 Rajabi. Built with care for Indonesia.</p>
           <nav className="mt-2 flex justify-center space-x-4">
             <a href="/privacy" className="hover:underline">Privacy Policy</a>
             <a href="/terms" className="hover:underline">Terms of Service</a>

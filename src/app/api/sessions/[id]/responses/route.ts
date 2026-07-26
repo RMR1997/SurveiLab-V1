@@ -53,6 +53,7 @@ export async function POST(
         npsScore: result.data.npsScore,
         conceptClarity: result.data.conceptClarity,
         customBehaviorAnswer: result.data.customBehaviorAnswer,
+        customAnswers: result.data.customAnswers ? JSON.stringify(result.data.customAnswers) : null,
       },
       update: {
         problemSeverity: result.data.problemSeverity,
@@ -63,6 +64,7 @@ export async function POST(
         npsScore: result.data.npsScore,
         conceptClarity: result.data.conceptClarity,
         customBehaviorAnswer: result.data.customBehaviorAnswer,
+        customAnswers: result.data.customAnswers ? JSON.stringify(result.data.customAnswers) : null,
       },
     })
 

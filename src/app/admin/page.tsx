@@ -503,12 +503,26 @@ export default function AdminDashboard() {
                                     </div>
                                   ))}
                                 </div>
-                                {resp.customBehaviorAnswer && (
+                                {resp.customAnswers && Object.keys(resp.customAnswers).length > 0 ? (
+                                  <div className="mt-3 pt-3 border-t border-border/50 space-y-2 text-xs">
+                                    {Object.entries(resp.customAnswers).map(([qId, val]: [string, any]) => {
+                                      const matchedIdea = IDEAS.find(i => i.id === resp.ideaId)
+                                      const matchedQ = matchedIdea?.customQuestions?.find(q => q.id === qId)
+                                      const questionText = matchedQ ? matchedQ.question : qId
+                                      return (
+                                        <div key={qId} className="flex flex-col gap-0.5">
+                                          <span className="text-muted-foreground font-medium">{questionText}:</span>
+                                          <span className="font-semibold text-foreground bg-muted/30 px-2 py-1.5 rounded-lg inline-block self-start">{val}</span>
+                                        </div>
+                                      )
+                                    })}
+                                  </div>
+                                ) : resp.customBehaviorAnswer ? (
                                   <div className="mt-3 pt-3 border-t border-border/50 text-xs">
                                     <span className="text-muted-foreground font-medium block mb-1">Jalur / Cara Sourcing Responden:</span>
                                     <span className="font-semibold text-foreground bg-muted/30 px-2 py-1.5 rounded-lg inline-block">{resp.customBehaviorAnswer}</span>
                                   </div>
-                                )}
+                                ) : null}
                               </div>
                             ))}
                           </div>

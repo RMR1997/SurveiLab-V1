@@ -9,7 +9,7 @@ export const startupIdeas: StartupIdea[] = [
     description: 'Platform yang menghubungkan petani, peternak, nelayan, dan UMKM secara langsung dengan restoran, hotel, distributor, industri, maupun buyer. Dengan menghilangkan perantara yang berlebihan, produsen memperoleh harga yang lebih adil sementara pembeli mendapatkan pasokan yang lebih efisien dan berkualitas.',
     motivation: 'Kami merasa prihatin melihat petani dan UMKM di daerah — mereka sudah bekerja keras menanam dan memproduksi barang, tetapi saat dijual harganya ditekan habis-habisan oleh tengkulak. Sementara pabrik atau restoran di kota membelinya dengan sangat mahal. Kami ingin memotong rantai perantara tersebut agar produsen mendapatkan harga yang adil dan pembeli memperoleh pasokan dengan harga lebih efisien.',
     benefits: 'Petani bisa cuan lebih banyak, industri hemat pengeluaran, dan uang berputar langsung di daerah — tanpa harus ada pihak ketiga yang makan di tengah.',
-    challenges: 'Verifikasi fisik di awal cukup berat — kita harus datang langsung ke lokasi produsen buat bikin video verifikasi. Kalau lokasinya jauh di daerah, lumayan makan waktu dan biaya transport.',
+    challenges: 'Verifikasi fisik di awal cukup berat — kita harus datang langsung to lokasi produsen buat bikin video verifikasi. Kalau lokasinya jauh di daerah, lumayan makan waktu dan biaya transport.',
     iconUrl: '/icons/produsen.svg',
     mockupUrl: '/images/ProdusenNusantara.JPG',
     colorPrimary: '#10B981',
@@ -22,6 +22,39 @@ export const startupIdeas: StartupIdea[] = [
       'Melalui grup WhatsApp / Sosial Media (Facebook, Instagram)',
       'Supermarket besar',
       'Belum menemukan produsen langsung, beli lewat perantara'
+    ],
+    customQuestions: [
+      {
+        id: 'sourcing',
+        question: 'Di mana Anda biasanya mencari atau membeli produk segar (sayur, buah, daging) langsung dari produsen pertama?',
+        options: [
+          'Pasar tradisional lokal',
+          'Supplier / Distributor konvensional',
+          'Melalui grup WhatsApp / Sosial Media (Facebook, Instagram)',
+          'Supermarket besar',
+          'Belum menemukan produsen langsung, beli lewat perantara'
+        ]
+      },
+      {
+        id: 'budget',
+        question: 'Berapa rata-rata anggaran bulanan yang Anda habiskan untuk membeli bahan makanan segar saat ini?',
+        options: [
+          'Di bawah Rp 1 Juta',
+          'Rp 1 Juta - Rp 5 Juta',
+          'Rp 5 Juta - Rp 10 Juta',
+          'Di atas Rp 10 Juta'
+        ]
+      },
+      {
+        id: 'outcome',
+        question: 'Apa keuntungan utama yang paling Anda harapkan dari Produsen Nusantara?',
+        options: [
+          'Harga bahan baku yang jauh lebih murah',
+          'Jaminan kualitas kesegaran barang',
+          'Kemudahan pengiriman berkala',
+          'Keamanan transaksi pembayaran'
+        ]
+      }
     ],
     q1ProblemText: 'Seberapa sering Anda merasa dirugikan oleh harga bahan pangan yang mahal atau kualitas yang kurang segar akibat rantai distribusi yang terlalu panjang?',
     q2ExperienceText: 'Apakah Anda (atau keluarga/teman) pernah kesulitan mendapatkan sayur, buah, atau daging segar langsung dari petani/peternak pertama?',
@@ -50,6 +83,39 @@ export const startupIdeas: StartupIdea[] = [
       'Mading kampus / Info internal kemahasiswaan',
       'Belum tahu harus mencari di mana'
     ],
+    customQuestions: [
+      {
+        id: 'sourcing',
+        question: 'Di mana Anda biasanya mencari atau menawarkan pekerjaan sampingan/harian ringan?',
+        options: [
+          'Platform freelance (Fiverr, Projects.co.id, Fastwork, dll)',
+          'Sosial Media (X/Twitter, Instagram, LinkedIn)',
+          'Rekomendasi teman / Grup angkatan kuliah',
+          'Mading kampus / Info internal kemahasiswaan',
+          'Belum tahu harus mencari di mana'
+        ]
+      },
+      {
+        id: 'budget',
+        question: 'Berapa upah maksimal yang rela Anda bayar untuk menyelesaikan satu tugas harian ringan berdurasi 2-3 jam?',
+        options: [
+          'Di bawah Rp 30.000',
+          'Rp 30.000 - Rp 50.000',
+          'Rp 50.000 - Rp 100.000',
+          'Di atas Rp 100.000'
+        ]
+      },
+      {
+        id: 'outcome',
+        question: 'Apa ekspektasi utama Anda saat mempekerjakan mahasiswa dari platform ini?',
+        options: [
+          'Pekerjaan harian saya cepat selesai',
+          'Mengurangi beban kerja saya',
+          'Membantu mahasiswa mendapatkan uang saku tambahan',
+          'Biaya jasa lebih terjangkau dibandingkan tenaga profesional'
+        ]
+      }
+    ],
     q1ProblemText: 'Menurut Anda, seberapa sulit mahasiswa mencari uang saku tambahan yang aman, atau UMKM mencari bantuan tenaga harian yang murah?',
     q2ExperienceText: 'Apakah Anda (sebagai mahasiswa/pelaku usaha) pernah kesulitan mencari kerja sampingan yang fleksibel atau mencari asisten harian?',
     q3UsefulnessText: 'Seberapa membantu platform ini dalam membuka lapangan kerja harian bagi mahasiswa sekaligus mempermudah UMKM menyelesaikan kerjaan ringannya?',
@@ -77,6 +143,39 @@ export const startupIdeas: StartupIdea[] = [
       'Hanya mengeluh ke teman/keluarga saja',
       'Biarkannya saja karena bingung harus melapor ke mana'
     ],
+    customQuestions: [
+      {
+        id: 'sourcing',
+        question: 'Ke mana Anda biasanya melaporkan keluhan tentang fasilitas umum yang rusak?',
+        options: [
+          'Melaporkannya langsung ke RT/RW atau Kelurahan',
+          'Mengunggahnya ke sosial media (Instagram, Twitter, TikTok)',
+          'Aplikasi resmi pemerintah (JAKI, Lapor.go.id, dll)',
+          'Hanya mengeluh ke teman/keluarga saja',
+          'Biarkannya saja karena bingung harus melapor ke mana'
+        ]
+      },
+      {
+        id: 'budget',
+        question: 'Apa kekhawatiran terbesar Anda saat melaporkan kerusakan fasilitas publik secara terbuka?',
+        options: [
+          'Takut dituntut balik UU ITE/pencemaran nama baik',
+          'Takut identitas pribadi tersebar',
+          'Khawatir laporan diabaikan begitu saja',
+          'Prosedur pengisian data terlalu rumit'
+        ]
+      },
+      {
+        id: 'outcome',
+        question: 'Apa hasil akhir yang paling Anda harapkan setelah melaporkan jalan/jembatan rusak di PantauKita?',
+        options: [
+          'Laporan langsung direspon & diperbaiki pemerintah',
+          'Laporan dibagikan oleh publik hingga viral',
+          'Menjadi arsip rekam jejak pembangunan daerah',
+          'Mendapatkan poin reward/insentif keaktifan'
+        ]
+      }
+    ],
     q1ProblemText: 'Seberapa sering Anda merasa terganggu atau bahaya oleh fasilitas umum yang rusak (jalan berlubang, jembatan rusak, lampu jalan mati) di sekitar Anda?',
     q2ExperienceText: 'Apakah Anda atau orang terdekat Anda pernah mengalami kerugian atau kecelakaan akibat kerusakan fasilitas umum di jalan?',
     q3UsefulnessText: 'Seberapa bermanfaat platform ini jika bisa mendokumentasikan jalan/jembatan rusak secara independen agar mendesak pemerintah segera memperbaikinya?',
@@ -89,7 +188,7 @@ export const startupIdeas: StartupIdea[] = [
     tagline: 'Bawa Produk Indonesia ke Dunia',
     description: 'Platform yang membantu petani, peternak, nelayan, dan UMKM mendapatkan akses ke pasar ekspor. Terhubung dengan eksportir Indonesia maupun buyer internasional, dapatkan pendampingan ekspor lengkap, dan pelajari standar ekspor yang diperlukan. Buka peluang pasar yang lebih luas untuk produk lokal berkualitas.',
     motivation: 'Produk lokal Indonesia memiliki kualitas luar biasa, namun banyak produsen lokal tidak mengetahui cara mengakses pasar global karena informasi ekspor yang rumit dan mahal. Kami ingin membangun jembatan informasi dan menghubungkan mereka dengan jaringan eksportir berpengalaman serta pembeli internasional tanpa biaya konsultasi yang membebani.',
-    benefits: 'UMKM dan petani bisa menjangkau pasar yang jauh lebih besar dari sekadar lokal — harga jual ke buyer internasional pun biasanya jauh lebih tinggi. Produk Indonesia bisa go global tanpa harus menunggu ada investor besar yang turun tangan.',
+    benefits: 'UMKM and petani bisa menjangkau pasar yang jauh lebih besar dari sekadar lokal — harga jual ke buyer internasional pun biasanya jauh lebih tinggi. Produk Indonesia bisa go global tanpa harus menunggu ada investor besar yang turun tangan.',
     challenges: 'Standar kualitas dan regulasi ekspor tiap negara berbeda-beda dan bisa berubah sewaktu-waktu. Selain itu, kendala bahasa dan kepercayaan antara UMKM lokal dengan buyer asing jadi tantangan tersendiri yang harus dijembatani dengan baik.',
     iconUrl: '/icons/export.svg',
     mockupUrl: '/images/ExportHub.jpg',
@@ -103,6 +202,39 @@ export const startupIdeas: StartupIdea[] = [
       'Seminar / Kursus ekspor berbayar',
       'Googling / Mencari mandiri di YouTube',
       'Belum pernah mencari tahu'
+    ],
+    customQuestions: [
+      {
+        id: 'sourcing',
+        question: 'Di mana Anda biasanya mencari informasi/buyer untuk keperluan ekspor produk?',
+        options: [
+          'Website resmi kementerian/instansi pemerintah (Kemenkop, Kemendag)',
+          'Asosiasi ekspor atau komunitas bisnis ekspor',
+          'Seminar / Kursus ekspor berbayar',
+          'Googling / Mencari mandiri di YouTube',
+          'Belum pernah mencari tahu'
+        ]
+      },
+      {
+        id: 'budget',
+        question: 'Berapa modal maksimal yang siap Anda investasikan di awal untuk membiayai sertifikasi/kelayakan ekspor produk Anda?',
+        options: [
+          'Di bawah Rp 2 Juta',
+          'Rp 2 Juta - Rp 5 Juta',
+          'Rp 5 Juta - Rp 15 Juta',
+          'Di atas Rp 15 Juta'
+        ]
+      },
+      {
+        id: 'outcome',
+        question: 'Layanan ekspor apa yang paling ingin Anda dapatkan dari platform seperti ini?',
+        options: [
+          'Bimbingan belajar langkah-demi-langkah',
+          'Jasa pengurusan dokumen (legalitas)',
+          'Akses kontak buyer luar negeri',
+          'Pembiayaan modal ekspor'
+        ]
+      }
     ],
     q1ProblemText: 'Seberapa sulit menurut Anda bagi pelaku UMKM/petani lokal untuk menembus pasar ekspor luar negeri secara mandiri?',
     q2ExperienceText: 'Apakah Anda atau kenalan pebisnis Anda pernah mengalami kebuntuan informasi/jalur saat ingin mencoba mengekspor produk lokal?',
@@ -131,13 +263,45 @@ export const startupIdeas: StartupIdea[] = [
       'Forum / komunitas pemburu beasiswa (Schoters, Kobi, dll)',
       'Googling sendiri secara acak'
     ],
+    customQuestions: [
+      {
+        id: 'sourcing',
+        question: 'Di mana Anda biasanya mencari informasi tepercaya tentang beasiswa/kerja ke luar negeri?',
+        options: [
+          'Agen konsultan pendidikan / kerja luar negeri (berbayar)',
+          'Akun edukasi / influencer di sosial media (TikTok, Instagram, YouTube)',
+          'Website resmi universitas atau kedutaan besar negara tujuan',
+          'Forum / komunitas pemburu beasiswa (Schoters, Kobi, dll)',
+          'Googling sendiri secara acak'
+        ]
+      },
+      {
+        id: 'budget',
+        question: 'Berapa anggaran maksimal yang rela Anda keluarkan untuk bimbingan review dokumen secara profesional?',
+        options: [
+          'Harus 100% gratis',
+          'Maksimal Rp 200.000 per berkas',
+          'Rp 200.000 - Rp 1.000.000 untuk paket lengkap',
+          'Siap bayar mahal asal dijamin lolos'
+        ]
+      },
+      {
+        id: 'outcome',
+        question: 'Bantuan persiapan luar negeri apa yang paling mendesak bagi Anda saat ini?',
+        options: [
+          'Lolos skor IELTS/TOEFL target',
+          'Menyusun Motivation Letter/Essay yang memikat beasiswa',
+          'Memahami checklist visa & keuangan secara mandiri',
+          'Penerjemahan dokumen resmi ke bahasa Inggris'
+        ]
+      }
+    ],
     q1ProblemText: 'Seberapa pusing atau bingung Anda saat harus mencari tahu syarat dokumen, visa, dan langkah mandiri untuk kuliah/kerja ke luar negeri?',
     q2ExperienceText: 'Apakah Anda atau teman terdekat Anda saat ini sedang atau pernah berjuang mempersiapkan syarat dokumen untuk ke luar negeri?',
     q3UsefulnessText: 'Seberapa terbantu Anda jika ada platform yang menyediakan checklist dokumen lengkap dan panduan terstruktur langkah-demi-langkah ke luar negeri?',
     q5UrgencyText: 'Seberapa mendesak kehadiran asisten panduan dokumen mandiri seperti GlobalPath.id bagi generasi muda Indonesia saat ini?'
   },
 ]
-
 
 export const getIdeaBySlug = (slug: string): StartupIdea | undefined => {
   return startupIdeas.find((idea) => idea.slug === slug)
