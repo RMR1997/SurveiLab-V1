@@ -151,19 +151,19 @@ export function CustomBehaviorQuestion({
       const parsed = getInitialSelected()
       setSelectedList(parsed)
       // Check if there is an "other" option in parsed
-      const otherItem = parsed.find(item => item.startsWith('Lainnya: '))
+      const otherItem = parsed.find(item => item === 'Lainnya' || item.startsWith('Lainnya: '))
       if (otherItem) {
         setIsOtherSelected(true)
-        setOtherText(otherItem.replace('Lainnya: ', ''))
+        setOtherText(otherItem === 'Lainnya' ? '' : otherItem.replace('Lainnya: ', ''))
       } else {
         setIsOtherSelected(false)
       }
     } else {
       if (value) {
-        if (value.startsWith('Lainnya: ')) {
+        if (value === 'Lainnya' || value.startsWith('Lainnya: ')) {
           setSingleSelected('Lainnya')
           setIsOtherSelected(true)
-          setOtherText(value.replace('Lainnya: ', ''))
+          setOtherText(value === 'Lainnya' ? '' : value.replace('Lainnya: ', ''))
         } else {
           setSingleSelected(value)
           setIsOtherSelected(false)

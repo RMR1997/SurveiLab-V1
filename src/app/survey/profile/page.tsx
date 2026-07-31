@@ -173,19 +173,19 @@ export default function ProfilePage() {
               
               <div className="bg-slate-50 dark:bg-slate-800/50 p-4 rounded-xl border border-slate-100 dark:border-slate-700/50 text-xs text-muted-foreground mt-2 leading-relaxed transition-all duration-200">
                 {formData.techSavviness === 1 && (
-                  <p><strong>Level 1 (Sangat Rendah)</strong>: Jarang berinteraksi dengan teknologi. Hanya menggunakan ponsel untuk SMS/telepon biasa.</p>
+                  <p><strong>Level 1 (Sangat Rendah)</strong>: Hanya menggunakan HP untuk telepon atau SMS biasa. Jarang atau hampir tidak pernah memakai internet.</p>
                 )}
                 {formData.techSavviness === 2 && (
-                  <p><strong>Level 2 (Rendah)</strong>: Menggunakan teknologi dasar seperti WhatsApp dan sosial media sesekali, jarang mencoba aplikasi baru.</p>
+                  <p><strong>Level 2 (Rendah)</strong>: Bisa menggunakan WhatsApp untuk berkirim pesan atau membuka media sosial (seperti Facebook/Tiktok) sesekali.</p>
                 )}
                 {formData.techSavviness === 3 && (
-                  <p><strong>Level 3 (Sedang)</strong>: Terbiasa menggunakan e-commerce, mobile banking, dan aplikasi transportasi online sehari-hari.</p>
+                  <p><strong>Level 3 (Sedang)</strong>: Sering menggunakan aplikasi sehari-hari seperti belanja online (Shopee/Tokopedia), transfer uang (M-Banking/Dana/Gopay), atau memesan ojek online.</p>
                 )}
                 {formData.techSavviness === 4 && (
-                  <p><strong>Level 4 (Tinggi)</strong>: Sangat nyaman dengan berbagai aplikasi produktivitas (SaaS), produk digital, atau tools kerja online.</p>
+                  <p><strong>Level 4 (Tinggi)</strong>: Sangat lancar menggunakan berbagai aplikasi di HP dan laptop, seperti aplikasi untuk bekerja online, belajar, mengedit dokumen, atau mengurus usaha.</p>
                 )}
                 {formData.techSavviness === 5 && (
-                  <p><strong>Level 5 (Sangat Tinggi)</strong>: Power-user / Tech enthusiast. Suka menguji teknologi baru, AI, pemrograman, atau early adopter.</p>
+                  <p><strong>Level 5 (Sangat Tinggi)</strong>: Sangat mahir teknologi. Suka mencoba aplikasi baru, menggunakan teknologi kecerdasan buatan (AI), mendesain profesional, atau pemrograman.</p>
                 )}
               </div>
             </div>
