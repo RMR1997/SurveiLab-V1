@@ -27,33 +27,38 @@ export const startupIdeas: StartupIdea[] = [
       {
         id: 'sourcing',
         question: 'Di mana Anda biasanya mencari atau membeli produk segar (sayur, buah, daging) langsung dari produsen pertama?',
+        type: 'multiple',
         options: [
           'Pasar tradisional lokal',
           'Supplier / Distributor konvensional',
           'Melalui grup WhatsApp / Sosial Media (Facebook, Instagram)',
-          'Supermarket besar',
-          'Belum menemukan produsen langsung, beli lewat perantara'
-        ]
+          'Supermarket besar'
+        ],
+        hasOther: true
       },
       {
         id: 'budget',
         question: 'Berapa rata-rata anggaran bulanan yang Anda habiskan untuk membeli bahan makanan segar saat ini?',
+        type: 'single',
         options: [
           'Di bawah Rp 1 Juta',
           'Rp 1 Juta - Rp 5 Juta',
           'Rp 5 Juta - Rp 10 Juta',
           'Di atas Rp 10 Juta'
-        ]
+        ],
+        hasOther: false
       },
       {
         id: 'outcome',
         question: 'Apa keuntungan utama yang paling Anda harapkan dari Produsen Nusantara?',
+        type: 'multiple',
         options: [
           'Harga bahan baku yang jauh lebih murah',
           'Jaminan kualitas kesegaran barang',
           'Kemudahan pengiriman berkala',
           'Keamanan transaksi pembayaran'
-        ]
+        ],
+        hasOther: true
       }
     ],
     q1ProblemText: 'Seberapa sering Anda merasa dirugikan oleh harga bahan pangan yang mahal atau kualitas yang kurang segar akibat rantai distribusi yang terlalu panjang?',
@@ -87,33 +92,38 @@ export const startupIdeas: StartupIdea[] = [
       {
         id: 'sourcing',
         question: 'Di mana Anda biasanya mencari atau menawarkan pekerjaan sampingan/harian ringan?',
+        type: 'multiple',
         options: [
           'Platform freelance (Fiverr, Projects.co.id, Fastwork, dll)',
           'Sosial Media (X/Twitter, Instagram, LinkedIn)',
           'Rekomendasi teman / Grup angkatan kuliah',
-          'Mading kampus / Info internal kemahasiswaan',
-          'Belum tahu harus mencari di mana'
-        ]
+          'Mading kampus / Info internal kemahasiswaan'
+        ],
+        hasOther: true
       },
       {
         id: 'budget',
         question: 'Berapa upah maksimal yang rela Anda bayar untuk menyelesaikan satu tugas harian ringan berdurasi 2-3 jam?',
+        type: 'single',
         options: [
           'Di bawah Rp 30.000',
           'Rp 30.000 - Rp 50.000',
           'Rp 50.000 - Rp 100.000',
           'Di atas Rp 100.000'
-        ]
+        ],
+        hasOther: false
       },
       {
         id: 'outcome',
         question: 'Apa ekspektasi utama Anda saat mempekerjakan mahasiswa dari platform ini?',
+        type: 'multiple',
         options: [
           'Pekerjaan harian saya cepat selesai',
           'Mengurangi beban kerja saya',
           'Membantu mahasiswa mendapatkan uang saku tambahan',
           'Biaya jasa lebih terjangkau dibandingkan tenaga profesional'
-        ]
+        ],
+        hasOther: true
       }
     ],
     q1ProblemText: 'Menurut Anda, seberapa sulit mahasiswa mencari uang saku tambahan yang aman, atau UMKM mencari bantuan tenaga harian yang murah?',
@@ -147,33 +157,38 @@ export const startupIdeas: StartupIdea[] = [
       {
         id: 'sourcing',
         question: 'Ke mana Anda biasanya melaporkan keluhan tentang fasilitas umum yang rusak?',
+        type: 'multiple',
         options: [
           'Melaporkannya langsung ke RT/RW atau Kelurahan',
           'Mengunggahnya ke sosial media (Instagram, Twitter, TikTok)',
           'Aplikasi resmi pemerintah (JAKI, Lapor.go.id, dll)',
-          'Hanya mengeluh ke teman/keluarga saja',
-          'Biarkannya saja karena bingung harus melapor ke mana'
-        ]
+          'Hanya mengeluh ke teman/keluarga saja'
+        ],
+        hasOther: true
       },
       {
         id: 'budget',
         question: 'Apa kekhawatiran terbesar Anda saat melaporkan kerusakan fasilitas publik secara terbuka?',
+        type: 'multiple',
         options: [
           'Takut dituntut balik UU ITE/pencemaran nama baik',
           'Takut identitas pribadi tersebar',
           'Khawatir laporan diabaikan begitu saja',
           'Prosedur pengisian data terlalu rumit'
-        ]
+        ],
+        hasOther: true
       },
       {
         id: 'outcome',
         question: 'Apa hasil akhir yang paling Anda harapkan setelah melaporkan jalan/jembatan rusak di PantauKita?',
+        type: 'multiple',
         options: [
           'Laporan langsung direspon & diperbaiki pemerintah',
           'Laporan dibagikan oleh publik hingga viral',
           'Menjadi arsip rekam jejak pembangunan daerah',
           'Mendapatkan poin reward/insentif keaktifan'
-        ]
+        ],
+        hasOther: true
       }
     ],
     q1ProblemText: 'Seberapa sering Anda merasa terganggu atau bahaya oleh fasilitas umum yang rusak (jalan berlubang, jembatan rusak, lampu jalan mati) di sekitar Anda?',
@@ -207,33 +222,38 @@ export const startupIdeas: StartupIdea[] = [
       {
         id: 'sourcing',
         question: 'Di mana Anda biasanya mencari informasi/buyer untuk keperluan ekspor produk?',
+        type: 'multiple',
         options: [
           'Website resmi kementerian/instansi pemerintah (Kemenkop, Kemendag)',
           'Asosiasi ekspor atau komunitas bisnis ekspor',
           'Seminar / Kursus ekspor berbayar',
-          'Googling / Mencari mandiri di YouTube',
-          'Belum pernah mencari tahu'
-        ]
+          'Googling / Mencari mandiri di YouTube'
+        ],
+        hasOther: true
       },
       {
         id: 'budget',
         question: 'Berapa modal maksimal yang siap Anda investasikan di awal untuk membiayai sertifikasi/kelayakan ekspor produk Anda?',
+        type: 'single',
         options: [
           'Di bawah Rp 2 Juta',
           'Rp 2 Juta - Rp 5 Juta',
           'Rp 5 Juta - Rp 15 Juta',
           'Di atas Rp 15 Juta'
-        ]
+        ],
+        hasOther: false
       },
       {
         id: 'outcome',
         question: 'Layanan ekspor apa yang paling ingin Anda dapatkan dari platform seperti ini?',
+        type: 'multiple',
         options: [
           'Bimbingan belajar langkah-demi-langkah',
           'Jasa pengurusan dokumen (legalitas)',
           'Akses kontak buyer luar negeri',
           'Pembiayaan modal ekspor'
-        ]
+        ],
+        hasOther: true
       }
     ],
     q1ProblemText: 'Seberapa sulit menurut Anda bagi pelaku UMKM/petani lokal untuk menembus pasar ekspor luar negeri secara mandiri?',
@@ -267,33 +287,38 @@ export const startupIdeas: StartupIdea[] = [
       {
         id: 'sourcing',
         question: 'Di mana Anda biasanya mencari informasi tepercaya tentang beasiswa/kerja ke luar negeri?',
+        type: 'multiple',
         options: [
           'Agen konsultan pendidikan / kerja luar negeri (berbayar)',
           'Akun edukasi / influencer di sosial media (TikTok, Instagram, YouTube)',
           'Website resmi universitas atau kedutaan besar negara tujuan',
-          'Forum / komunitas pemburu beasiswa (Schoters, Kobi, dll)',
-          'Googling sendiri secara acak'
-        ]
+          'Forum / komunitas pemburu beasiswa (Schoters, Kobi, dll)'
+        ],
+        hasOther: true
       },
       {
         id: 'budget',
         question: 'Berapa anggaran maksimal yang rela Anda keluarkan untuk bimbingan review dokumen secara profesional?',
+        type: 'single',
         options: [
           'Harus 100% gratis',
           'Maksimal Rp 200.000 per berkas',
           'Rp 200.000 - Rp 1.000.000 untuk paket lengkap',
           'Siap bayar mahal asal dijamin lolos'
-        ]
+        ],
+        hasOther: false
       },
       {
         id: 'outcome',
         question: 'Bantuan persiapan luar negeri apa yang paling mendesak bagi Anda saat ini?',
+        type: 'multiple',
         options: [
           'Lolos skor IELTS/TOEFL target',
           'Menyusun Motivation Letter/Essay yang memikat beasiswa',
           'Memahami checklist visa & keuangan secara mandiri',
           'Penerjemahan dokumen resmi ke bahasa Inggris'
-        ]
+        ],
+        hasOther: true
       }
     ],
     q1ProblemText: 'Seberapa pusing atau bingung Anda saat harus mencari tahu syarat dokumen, visa, dan langkah mandiri untuk kuliah/kerja ke luar negeri?',

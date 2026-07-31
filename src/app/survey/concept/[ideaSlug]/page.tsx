@@ -7,7 +7,7 @@ import { ArrowRight, ArrowLeft, Loader2 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { ConceptCard } from '@/components/survey/concept-card'
-import { RadioQuestion, LikertQuestion, NPSQuestion } from '@/components/survey/question-set'
+import { RadioQuestion, LikertQuestion, NPSQuestion, CustomBehaviorQuestion } from '@/components/survey/question-set'
 import { useSurveySession } from '@/hooks/use-survey-session'
 import { getIdeaBySlug, getAllIdeas } from '@/data/ideas'
 import { 
@@ -84,7 +84,19 @@ export default function ConceptPage() {
     if (idea.customQuestions && idea.customQuestions.length > 0) {
       const answers = formData.customAnswers || {}
       for (const q of idea.customQuestions) {
-        if (!answers[q.id]) {
+        const ansVal = answers[q.id]
+        let isEmpty = !ansVal
+        if (q.type === 'multiple' && ansVal) {
+          try {
+            const parsed = JSON.parse(ansVal)
+            if (Array.isArray(parsed) && parsed.length === 0) {
+              isEmpty = true
+            }
+          } catch (e) {
+            isEmpty = true
+          }
+        }
+        if (isEmpty) {
           toast.error(`Silakan jawab pertanyaan: "${q.question.substring(0, 35)}..."`)
           return
         }
@@ -242,10 +254,12 @@ export default function ConceptPage() {
             idea.customQuestions.map((q) => (
               <div key={q.id}>
                 <div className="h-px bg-border/55 w-full my-6" />
-                <RadioQuestion
+                <CustomBehaviorQuestion
                   id={q.id}
                   question={q.question}
-                  options={q.options.map(opt => ({ value: opt, label: opt }))}
+                  type={q.type}
+                  options={q.options}
+                  hasOther={q.hasOther}
                   value={formData.customAnswers?.[q.id] || ''}
                   onChange={(value) => {
                     const currentAnswers = formData.customAnswers || {}

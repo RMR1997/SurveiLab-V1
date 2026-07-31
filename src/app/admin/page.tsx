@@ -509,10 +509,35 @@ export default function AdminDashboard() {
                                       const matchedIdea = IDEAS.find(i => i.id === resp.ideaId)
                                       const matchedQ = matchedIdea?.customQuestions?.find(q => q.id === qId)
                                       const questionText = matchedQ ? matchedQ.question : qId
+                                      
+                                      let displayVal = val
+                                      let isArray = false
+                                      try {
+                                        if (typeof val === 'string' && val.startsWith('[')) {
+                                          const parsed = JSON.parse(val)
+                                          if (Array.isArray(parsed)) {
+                                            displayVal = parsed
+                                            isArray = true
+                                          }
+                                        }
+                                      } catch (e) {}
+
                                       return (
-                                        <div key={qId} className="flex flex-col gap-0.5">
+                                        <div key={qId} className="flex flex-col gap-1">
                                           <span className="text-muted-foreground font-medium">{questionText}:</span>
-                                          <span className="font-semibold text-foreground bg-muted/30 px-2 py-1.5 rounded-lg inline-block self-start">{val}</span>
+                                          {isArray && Array.isArray(displayVal) ? (
+                                            <div className="flex flex-wrap gap-1.5 mt-0.5">
+                                              {displayVal.map((v: string, idx: number) => (
+                                                <span key={idx} className="font-semibold bg-primary/10 text-primary px-2.5 py-1 rounded-full text-[11px] leading-none inline-block">
+                                                  {v}
+                                                </span>
+                                              ))}
+                                            </div>
+                                          ) : (
+                                            <span className="font-semibold text-foreground bg-muted/30 px-2.5 py-1.5 rounded-lg inline-block self-start mt-0.5 leading-normal">
+                                              {val}
+                                            </span>
+                                          )}
                                         </div>
                                       )
                                     })}

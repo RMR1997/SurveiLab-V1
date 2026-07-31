@@ -39,7 +39,9 @@ export type ClarityLevel =
 export interface CustomQuestionConfig {
   id: string;
   question: string;
+  type: 'single' | 'multiple';
   options: string[];
+  hasOther?: boolean;
 }
 
 // Main types

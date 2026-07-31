@@ -170,6 +170,24 @@ export default function ProfilePage() {
                 <span>Sangat rendah</span>
                 <span>Sangat tinggi</span>
               </div>
+              
+              <div className="bg-slate-50 dark:bg-slate-800/50 p-4 rounded-xl border border-slate-100 dark:border-slate-700/50 text-xs text-muted-foreground mt-2 leading-relaxed transition-all duration-200">
+                {formData.techSavviness === 1 && (
+                  <p><strong>Level 1 (Sangat Rendah)</strong>: Jarang berinteraksi dengan teknologi. Hanya menggunakan ponsel untuk SMS/telepon biasa.</p>
+                )}
+                {formData.techSavviness === 2 && (
+                  <p><strong>Level 2 (Rendah)</strong>: Menggunakan teknologi dasar seperti WhatsApp dan sosial media sesekali, jarang mencoba aplikasi baru.</p>
+                )}
+                {formData.techSavviness === 3 && (
+                  <p><strong>Level 3 (Sedang)</strong>: Terbiasa menggunakan e-commerce, mobile banking, dan aplikasi transportasi online sehari-hari.</p>
+                )}
+                {formData.techSavviness === 4 && (
+                  <p><strong>Level 4 (Tinggi)</strong>: Sangat nyaman dengan berbagai aplikasi produktivitas (SaaS), produk digital, atau tools kerja online.</p>
+                )}
+                {formData.techSavviness === 5 && (
+                  <p><strong>Level 5 (Sangat Tinggi)</strong>: Power-user / Tech enthusiast. Suka menguji teknologi baru, AI, pemrograman, atau early adopter.</p>
+                )}
+              </div>
             </div>
 
             <Button
