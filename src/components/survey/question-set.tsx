@@ -145,18 +145,18 @@ export function CustomBehaviorQuestion({
   const [otherText, setOtherText] = useState('')
   const [isOtherSelected, setIsOtherSelected] = useState(false)
 
-  // Sync state if value changes externally (e.g. on mount/load)
+  // Re-initialize local state ONLY when the question ID changes or value becomes empty (reset)
   useEffect(() => {
     if (type === 'multiple') {
       const parsed = getInitialSelected()
       setSelectedList(parsed)
-      // Check if there is an "other" option in parsed
       const otherItem = parsed.find(item => item === 'Lainnya' || item.startsWith('Lainnya: '))
       if (otherItem) {
         setIsOtherSelected(true)
         setOtherText(otherItem === 'Lainnya' ? '' : otherItem.replace('Lainnya: ', ''))
       } else {
         setIsOtherSelected(false)
+        setOtherText('')
       }
     } else {
       if (value) {
@@ -167,13 +167,15 @@ export function CustomBehaviorQuestion({
         } else {
           setSingleSelected(value)
           setIsOtherSelected(false)
+          setOtherText('')
         }
       } else {
         setSingleSelected('')
         setIsOtherSelected(false)
+        setOtherText('')
       }
     }
-  }, [value, type])
+  }, [id, value === ''])
 
   const handleCheckboxChange = (opt: string, checked: boolean) => {
     let newList = [...selectedList]
@@ -258,9 +260,9 @@ export function CustomBehaviorQuestion({
           })}
           
           {hasOther && (
-            <div className="space-y-3">
+            <div className="rounded-xl border border-slate-200 dark:border-slate-700 transition-all duration-200 [&:has(input:checked)]:border-primary [&:has(input:checked)]:bg-primary/5 dark:[&:has(input:checked)]:bg-primary/10">
               <label
-                className="flex items-start gap-3 p-4 rounded-xl border cursor-pointer transition-all duration-200 hover:bg-muted/50 [&:has(input:checked)]:border-primary [&:has(input:checked)]:bg-primary/5 dark:[&:has(input:checked)]:bg-primary/10 border-slate-200 dark:border-slate-700"
+                className="flex items-start gap-3 p-4 cursor-pointer hover:bg-muted/50"
               >
                 <input
                   type="checkbox"
@@ -275,16 +277,16 @@ export function CustomBehaviorQuestion({
               
               {isOtherSelected && (
                 <motion.div
-                  initial={{ opacity: 0, y: -5 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="pl-8"
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: 'auto' }}
+                  className="px-4 pb-4 pl-[46px]"
                 >
                   <Input
                     type="text"
                     value={otherText}
                     onChange={(e) => handleOtherTextChange(e.target.value)}
-                    placeholder="Tuliskan kondisi / jawaban Anda di sini..."
-                    className="rounded-xl h-11 border-primary/40 focus-visible:ring-primary"
+                    placeholder="Tuliskan jawaban kustom Anda di sini..."
+                    className="rounded-xl h-12 text-sm border-slate-200 dark:border-slate-700 focus-visible:ring-primary w-full bg-white dark:bg-slate-900"
                   />
                 </motion.div>
               )}
@@ -315,9 +317,9 @@ export function CustomBehaviorQuestion({
           })}
           
           {hasOther && (
-            <div className="space-y-3">
+            <div className="rounded-xl border border-slate-200 dark:border-slate-700 transition-all duration-200 [&:has(input:checked)]:border-primary [&:has(input:checked)]:bg-primary/5 dark:[&:has(input:checked)]:bg-primary/10">
               <label
-                className="flex items-start gap-3 p-4 rounded-xl border cursor-pointer transition-all duration-200 hover:bg-muted/50 [&:has(input:checked)]:border-primary [&:has(input:checked)]:bg-primary/5 dark:[&:has(input:checked)]:bg-primary/10 border-slate-200 dark:border-slate-700"
+                className="flex items-start gap-3 p-4 cursor-pointer hover:bg-muted/50"
               >
                 <input
                   type="radio"
@@ -333,16 +335,16 @@ export function CustomBehaviorQuestion({
               
               {isOtherSelected && (
                 <motion.div
-                  initial={{ opacity: 0, y: -5 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="pl-8"
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: 'auto' }}
+                  className="px-4 pb-4 pl-[46px]"
                 >
                   <Input
                     type="text"
                     value={otherText}
                     onChange={(e) => handleOtherTextChange(e.target.value)}
-                    placeholder="Tuliskan kondisi / jawaban Anda di sini..."
-                    className="rounded-xl h-11 border-primary/40 focus-visible:ring-primary"
+                    placeholder="Tuliskan jawaban kustom Anda di sini..."
+                    className="rounded-xl h-12 text-sm border-slate-200 dark:border-slate-700 focus-visible:ring-primary w-full bg-white dark:bg-slate-900"
                   />
                 </motion.div>
               )}
